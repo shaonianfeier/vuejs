@@ -26,6 +26,11 @@ module.exports={
                 test:/\.scss$/,
                 //loader:'style-loader!css-loader!sass-loader'
                 loader:ET.extract({fallback:'style-loader',use:'css-loader!sass-loader'})
+            },
+            {
+                test:/\.html$/,
+                //loader:'style-loader!css-loader!sass-loader'
+                loader:'string-loader'
             }
         ]
     },

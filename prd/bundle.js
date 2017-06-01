@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -74,20 +74,52 @@
 
 
 /**
- * Created by Administrator on 2017/5/26.
+ * Created by Administrator on 2017/5/31.
  */
-__webpack_require__(4);
+/*var name = 'yangyang'; //commonjs规范
+module.exports = name;*/
 
-/*var string = require('./scripts/common');
-console.log(string);*/
+//let name = 'xiaoyang'; //es6规范
+//export default name;
 
-// import Name from './scripts/common.js';
-// console.log(Name);
+var $ = __webpack_require__(5);
 
-var string = __webpack_require__(2);
+/*var common = {
+    getList:function(){
+        $.ajax({
+            url:'/api/list',
+            success:function(res){
+                console.log(res);
+            }
+        })
+    }
+}
+
+ module.exports = common;*/
+
+var comm = {
+    render: function render(str) {
+        var body = document.body;
+        body.innerHTML = str + body.innerHTML;
+    }
+};
+
+module.exports = comm;
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = "<div>    qwert</div>"
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -117,25 +149,35 @@ module.exports = function (module) {
 };
 
 /***/ }),
-/* 2 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 /**
- * Created by Administrator on 2017/5/27.
+ * Created by Administrator on 2017/5/26.
  */
-/*var name = 'yangyang'; //commonjs规范
-module.exports = name;*/
-//let name = 'xiaoyang'; //es6规范
-//export default name;
+__webpack_require__(1);
 
-var $ = __webpack_require__(3);
-console.log($);
+var string = __webpack_require__(0);
+console.log(string);
+
+// import Name from './scripts/common.js';
+// console.log(Name);
+
+/*var common = require('./scripts/common');
+common.getList();*/
+
+var comm = __webpack_require__(0);
+var html = __webpack_require__(2);
+console.log(html);
+comm.render(html);
+
+//comm.render('<div>qwert</div>');
 
 /***/ }),
-/* 3 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9968,22 +10010,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	return jQuery;
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)(module)))
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(0);
-(function webpackMissingModule() { throw new Error("Cannot find module \"run\""); }());
-(function webpackMissingModule() { throw new Error("Cannot find module \"build\""); }());
-
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)(module)))
 
 /***/ })
 /******/ ]);
